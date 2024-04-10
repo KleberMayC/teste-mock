@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mock"></div>
+
+    <script src="mock.js"></script>
+    <script>
+        let mockDiv = document.getElementById('mock');
+
+        let table = document.createElement('table');
+        table.classList.add('mock-table');
+
+
+        let headerRow = document.createElement('tr');
+        let headers = ['Número', 'Tipo', 'Valor de Entrada', 'Saldo', 'Parcelas'];
+
+        headers.forEach(function (headerText) {
+            let header = document.createElement('th');
+            header.textContent = headerText;
+            headerRow.appendChild(header);
+        });
+
+        table.appendChild(headerRow);
+
+
+        mockData.forEach(function (data) {
+            let row = document.createElement('tr');
+
+            Object.values(data).forEach(function (value) {
+                let cell = document.createElement('td');
+                cell.textContent = value;
+                row.appendChild(cell);
+            });
+
+            table.appendChild(row);
+        });
+
+        mockDiv.appendChild(table);
+    </script>
+</body>
+
+</html>

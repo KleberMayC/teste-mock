@@ -1,0 +1,31 @@
+.mock-table {
+    width: 60%;
+    text-align: center;
+    align-items: center;
+    border-collapse: collapse;
+}
+
+.mock-table th,
+.mock-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.mock-table th {
+    background-color: #f2f2f2;
+}
+
+.mock-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.mock-table tr:hover {
+    background-color: #eaeaea;
+}
+
+#mock{
+    display: flex;
+    justify-content: center;
+    
+}
