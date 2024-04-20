@@ -10,10 +10,12 @@
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+   
 }
 
 .mock-table th {
     background-color: #f2f2f2;
+   
 }
 
 .mock-table tr:nth-child(even) {
@@ -22,10 +24,15 @@
 
 .mock-table tr:hover {
     background-color: #eaeaea;
+    
 }
 
 #mock{
     display: flex;
     justify-content: center;
     
+}
+
+.mock-table tr{
+    margin-top: 20px;
 }

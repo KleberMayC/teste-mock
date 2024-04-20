@@ -14,35 +14,44 @@
     <script src="mock.js"></script>
     <script>
         let mockDiv = document.getElementById('mock');
-
         let table = document.createElement('table');
         table.classList.add('mock-table');
 
-
-        let headerRow = document.createElement('tr');
-        let headers = ['Número', 'Tipo', 'Valor de Entrada', 'Saldo', 'Parcelas'];
-
-        headers.forEach(function (headerText) {
-            let header = document.createElement('th');
-            header.textContent = headerText;
-            headerRow.appendChild(header);
-        });
-
-        table.appendChild(headerRow);
-
+        let headerNames = ['Código', "Categoria", 'Entrada', 'Saldo',
+            'Parcelas', 'Banco'
+        ]; // Defina os nomes dos cabeçalhos desejados nesse array
 
         mockData.forEach(function (data) {
+            let headerRow = document.createElement('tr');
+            let headers = Object.keys(data);
+
+            headers.forEach(function (headerKey, index) {
+                let header = document.createElement('th');
+                header.textContent = headerNames[index]; // Atribuir o nome correspondente ao cabeçalho
+                headerRow.appendChild(header);
+            });
+
+            table.appendChild(headerRow);
+
             let row = document.createElement('tr');
 
-            Object.values(data).forEach(function (value) {
+            Object.keys(data).forEach(function (key) {
                 let cell = document.createElement('td');
-                cell.textContent = value;
+
+                if (key === 'banco') {
+                    let image = document.createElement('img');
+                    image.src = data.banco;
+                    cell.appendChild(image);
+                } else {
+                    cell.textContent = data[key];
+                }
+
                 row.appendChild(cell);
             });
 
             table.appendChild(row);
         });
-
+        
         mockDiv.appendChild(table);
     </script>
 </body>
