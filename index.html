@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+
     <title>Document</title>
 </head>
 
 <body>
+    <div class="menu">
+        <ul>
+            <li class="menu-item">Cartas Contempladas
+                <ul class="submenu">
+                    <li><a href="http://google.com" target="_blank" rel="noopener noreferrer">Cartas Contempladas
+                            Veiculos</a></li>
+                    <li><a href="http://google.com" target="_blank" rel="noopener noreferrer">Cartas Contempladas
+                            Imoveis</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
     <div id="mock"></div>
 
     <script src="mock.js"></script>
@@ -51,9 +64,10 @@
 
             table.appendChild(row);
         });
-        
+
         mockDiv.appendChild(table);
     </script>
+    <script src="menu.js"></script>
 </body>
 
 </html>
